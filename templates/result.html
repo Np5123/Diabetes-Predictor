@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf=8">
+	<title>Diabetes Predictor</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+	<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="content">
+		<h2 class="content_heading"><span class="heading_font">Diabetes Predictor</span></h2>
+	</div>
+<div class="result">
+	{% if prediction==1 %}
+		<h1>Prediction:<span class="danger">Oh no! You have <strong>DIABETES</strong></span></h1>
+		<img class="gif" src="{{ url_for('static', filename='shock.gif') }}" alt="Diabetes Image">
+	{% elif prediction==0 %}
+		<h1>Prediction:<span class="safe">Wow! You DON'T have diabetes</span></h1>
+		<img class="gif1" src="{{ url_for('static', filename='happy.gif') }}" alt="Diabetes Image">
+	{% endif%}
+
+
+</div>
+
+<div class="footer">
+	<p class="footer_des">Made by Nithya Prasath</p>
+</div>
+
+</body>
+</html>
